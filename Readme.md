@@ -219,6 +219,7 @@ result = [word.upper() for word in words]
 print(result)
 ```
 **Con condicionales (if)**
+
 Permite filtrar y modificar elementos de una secuencia en una sola linea, sustituyendo la combinacion de un bucle for y una condicion if tradicional.
 sintaxis
 ```
