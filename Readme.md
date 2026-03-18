@@ -121,7 +121,7 @@ while i < len(lenguajes):
 
 ```
 
-### For ... in
+### For...in
 
 Se utiliza para recorrer  los elementos de una coleccion o iterable ejecutando un bloque de codigo para cada elemento.
 
@@ -157,13 +157,12 @@ lenguajes =['Python', 'JavaScript', 'Java', 'Ruby','C++', 'TypeScript', 'Go', 'R
 for lenguaje in lenguajes:
     print(lenguaje)
 ```
+For se puede usar en diferentes tipos de iterables como por ejemplo range().
 
-### For ... range()
-
-range() es un funcion integrada en phython que genera un una secuencia de numero enteros que se utiliza para controlar cuantas veces se ejecutara un bucle. No crea una lista real de numeros sino un lista iterable que produce numeros cuando el bucle los necesita.
+**range()** es un funcion integrada en python que genera una secuencia de números enteros que se utiliza para controlar cuantas veces se ejecutara un bucle. No crea una lista real de numeros sino un objeto iterable que produce numeros cuando el bucle los necesita.
 
 
-#### range(stop)
+**range(stop)**
 Cuando le damos un solo numero es el de stop
 
 ```Python
@@ -174,7 +173,7 @@ range(5)
 
 #el ultimo lo excluye
 ```
-#### range(start, stop)
+**range(start, stop)**
 
 Cuando le damos dos numeros el primero es por el que empieza y acaba antes del ultimo
 
@@ -186,7 +185,7 @@ range(1,10)
 
 # el ultimo lo excluye
 ```
-#### range(start, stop, step)
+**range(start, stop, step)**
 Cuando le damos tres numeros empieza por el primero acaba uno antes del segundo y avanza por el tercero
 El tercero le indica de cuanto en cuanto avanza los numeros
 ```Python
@@ -199,33 +198,57 @@ for num in range(1,10,2):
 # avanzar de 2 en 2
 ```
 
-#### Break
-Break es la palabra clave que permite interrumpir inmediatamente un bucle, el proposito es salir del bucle cuando se 
-cumple la condicion especifica, un uso tipico es detener el bucle  al encontrar un valor buscado o evitar procesamiento adicional
-cuando ya se alcanzo el objetivo.
-Break detiene el bucle por completo incluso si todavia quedan elementos por iterar. 
-```python
-lenguajes =['Go', 'Java', 'Ruby', 'Python', 'Swift', 'PHP']
-for lenguaje in lenguajes:
-    if lenguaje == "Python":
-        print(f"{lenguaje} fue encontrado en la posición {lenguajes.index(lenguaje)}")
-        break
-    print(lenguaje)
-    
+
+
+## 3.Lista por compresion
+
+Una lista por compresion (list Comprehension) es una estructura que permite crear un lista nueva aplicando una expresion a cada elemento de una secuencia.
+
+Sintaxis
 ```
-#### Continue
-Continue  es una palabra clave que permite saltar la iteracion actual de un bucle y continuar con la siguiente iteracion. 
-Omite ciertas iteraciones que cumplen una condicion, sin deterner el bucle completo. Se usa para saltar elementos no deseados e ignorar
-casos especificos mientras se sigue procesando el resto de la secuencia.
-Continue no termina el bucle, solo omite la iteracion actual.
+[expresion for elemento in iterable]
+```
+En donde la expresion es lo que quieres hacer con cada elemento, el elementos es la variable temporal y el iterable es sobre lo que se va a iterar(lista, string, etc)
 ```python
-lenguajes =['Java', 'Ruby', 'Python', 'Swift', 'PHP']
 
-for lenguaje in lenguajes:
-    if lenguaje == "Python":
-        print(f"No procesamos {lenguaje}, seguimos con los demás...")
-        continue
-    print(f"{lenguaje} será procesado normalmente")
+words = ["python","java","rust"]
 
+result = [word.upper() for word in words]
+
+print(result)
+```
+**Con condicionales (if)**
+Permite filtrar y modificar elementos de una secuencia en una sola linea, sustituyendo la combinacion de un bucle for y una condicion if tradicional.
+sintaxis
+```
+[expresion for elemento in iterable if condicion]
+
+```
+
+La expresion es la transformacion que se aplica al elemento, el elememento es la variable que representa cada valor iterable, el iterable es la coleccion que se recorre y la condicion es el criterio que determina si el elemento se incluye en la nueva lista.
+```python
+numbers = [1,2,3,4,5,6]
+
+result = [number * 2 for number in numbers if number % 2 == 0]
+
+print(result)
+```
+No se recomienda usarla si la logica es muy compleja ya no se veria claro que es lo tiene que hacer.
+
+El if al final solo filtra elementos. Si se quiere modificar el valor con una condición, se utiliza if/else dentro de la expresión.
+
+```
+[expresion_true if condicion else expresion_false for elemento in iterable]
+
+```
+
+En este caso la expresion_true es lo que ejecuta si se cumple la condicion, la condicion evalua (verdadero o falso), expresion_false es lo que se ejecuta si no se cumple la condicion el elemento es la variable que representa el valor del iterable y el iterable la coleccion que se recorre.
+
+```python
+numbers = [1, 2, 3, 4, 5]
+
+result = [n * 2 if n % 2 == 0 else n for n in numbers]
+
+print(result)
 ```
 

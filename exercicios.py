@@ -1,6 +1,5 @@
-lenguajes =['Go', 'Java', 'Ruby', 'Python', 'Swift', 'PHP']
-for lenguaje in lenguajes:
-    if lenguaje == "Python":
-        print(f"{lenguaje} fue encontrado en la posición {lenguajes.index(lenguaje)}")
-        break
-    print(lenguaje)
+numbers = [1, 2, 3, 4, 5]
+
+result = [n * 2 if n % 2 == 0 else n for n in numbers]
+
+print(result)
