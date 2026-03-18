@@ -150,6 +150,7 @@ flowchart TD
     style G fill:#FFB6C6
 ```
 For recorre una lista de 10 elementos cuando acabe de recorrer la lista saldra del bucle. 
+
 Ejemplo con una lista de 10 elementos.
 ```python
 lenguajes =['Python', 'JavaScript', 'Java', 'Ruby','C++', 'TypeScript', 'Go', 'Rust', 'Swift', 'PHP']
