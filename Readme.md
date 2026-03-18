@@ -127,14 +127,13 @@ Se utiliza para recorrer  los elementos de una coleccion o iterable ejecutando u
 
 For .. in permite itera sobre cada elemento de una sestructura de datos, un iterable es cualquier objeto que pueda recorrerse elemento por elemento como listas, tuplas sets, diccionarios, strings, rangos.
 Con for tienes un principio y un fin bien definidos.
+
 Sintaxis:
 ```
 colección de datos
-
 [elemento1, elemento2, elemento3]
 
 for elemento in colección:
-
     ejecutar código
 ```
 
@@ -204,7 +203,7 @@ for num in range(1,10,2):
 Break es la palabra clave que permite interrumpir inmediatamente un bucle, el proposito es salir del bucle cuando se 
 cumple la condicion especifica, un uso tipico es detener el bucle  al encontrar un valor buscado o evitar procesamiento adicional
 cuando ya se alcanzo el objetivo.
-Break detiene el bucle por completo incluso si todavia qudan elementos por iterar. 
+Break detiene el bucle por completo incluso si todavia quedan elementos por iterar. 
 
 #### Continue
 Continue  es una palabra clave que permite saltar la iteracion actual de un bucle y continuar con la siguiente iteracion. 
